@@ -31,9 +31,9 @@ namespace _3enRaya
 
         public static void ConstatarTablero()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < casilla.GetLength(0); i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < casilla.GetLength(1); j++)
                 {
                     casilla[i, j] = 0;
                 }
@@ -220,9 +220,9 @@ namespace _3enRaya
         static bool WinCondition()
         {
             int contadorCasillasLlenas = 0;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < casilla.GetLength(0); i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < casilla.GetLength(1); j++)
                 {
                     if (casilla[i, j] != 0)
                     {
@@ -236,6 +236,8 @@ namespace _3enRaya
                     }
                 }
             }
+
+            //for recorriendo las casillas, 3 variables que guarden los valores de las 3 combinaciones posibles y a sumar
             if (casilla[0, 0] + casilla[0, 1] + casilla[0, 2] == 3 ||
                 casilla[1, 0] + casilla[1, 1] + casilla[1, 2] == 3 ||
                 casilla[2, 0] + casilla[2, 1] + casilla[2, 2] == 3 ||
